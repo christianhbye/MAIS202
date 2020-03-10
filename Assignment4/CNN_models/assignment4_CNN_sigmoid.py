@@ -24,14 +24,14 @@ y_train = to_categorical(train_labels)
 #Model
 model = Sequential()
 # Add convolution 2D
-model.add(Conv2D(32, kernel_size=(3, 3), activation='relu', kernel_initializer='he_normal',
+model.add(Conv2D(32, kernel_size=(3, 3), activation='sigmoid',
                  input_shape=(28, 28, 1)))
 model.add(MaxPooling2D((2, 2)))
-model.add(Conv2D(64, kernel_size=(3, 3), activation='relu'))
+model.add(Conv2D(64, kernel_size=(3, 3), activation='sigmoid'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
-model.add(Conv2D(128, (3, 3), activation='relu'))
+model.add(Conv2D(128, (3, 3), activation='sigmoid'))
 model.add(Flatten())
-model.add(Dense(128, activation='relu'))
+model.add(Dense(128, activation='sigmoid'))
 model.add(Dense(10, activation='softmax'))
 
 
